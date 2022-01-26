@@ -27,4 +27,3 @@ export default class FallenSoldierBlock extends React.Component {
     );
   }
 }
-
