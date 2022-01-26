@@ -1,9 +1,9 @@
 import React from 'react';
 import '../App';
 import Board from './board.js';
-import King from '../pieces/king'
+import King from '../piecess/king'
 import FallenSoldierBlock from './fallen-soldier-block.js';
-import initialiseChessBoard from '../helpers/board-initialiser.js';
+import initialiseChessBoard from '../helper/board-initialiser.js';
 import { Card } from '@mui/material';
 
 

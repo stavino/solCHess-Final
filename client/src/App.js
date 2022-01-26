@@ -2,12 +2,12 @@ import './App.css';
 import '@mui/material'
 import { Grid, Paper, Typography, Card, Box } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material';
-import Game from './components/game.js'
+import Game from './comp/game.js'
 import { useState } from 'react';
 import {Brightness4, Brightness7, PinDropSharp} from '@mui/icons-material'
 import { IconButton } from '@mui/material';
 import {Route, Routes} from 'react-router-dom'
-import NavBar from './components/navbar';
+import NavBar from './comp/navbar';
 import { green } from '@mui/material/colors';
 
 
