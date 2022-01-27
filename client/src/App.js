@@ -8,7 +8,7 @@ import {Brightness4, Brightness7, PinDropSharp} from '@mui/icons-material'
 import { IconButton } from '@mui/material';
 import {Route, Routes} from 'react-router-dom'
 import NavBar from './comp/navbar';
-import { green } from '@mui/material/colors';
+
 
 
 function App() {
@@ -31,7 +31,7 @@ console.log(theme.palette.primary)
   
 <ThemeProvider theme={theme} >
     <div className={"App"} color='inherit'>  
-      <NavBar darkMode={darkMode} setDarkMode={setDarkMode} theme={theme}></NavBar>
+      <NavBar  darkMode={darkMode} setDarkMode={setDarkMode} theme={theme}></NavBar>
        
         <Routes>
           <Route path='/'/>

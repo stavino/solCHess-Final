@@ -7,6 +7,8 @@ import logo from '../image/logo.png'
 import logo2 from '../image/white_logo.jpeg'
 import { flexbox, height } from '@mui/system';
 import { Link } from '@mui/material';
+import App from '../App';
+import { Wallet } from './wallet.tsx';
 
 function NavBar(props){
     
