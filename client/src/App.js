@@ -8,6 +8,7 @@ import {Brightness4, Brightness7, PinDropSharp} from '@mui/icons-material'
 import { IconButton } from '@mui/material';
 import {Route, Routes} from 'react-router-dom'
 import NavBar from './comp/navbar';
+import Login from './comp/login';
 
 
 
@@ -34,7 +35,7 @@ console.log(theme.palette.primary)
       <NavBar  darkMode={darkMode} setDarkMode={setDarkMode} theme={theme}></NavBar>
        
         <Routes>
-          <Route path='/'/>
+          <Route path='/' element={<Login />}/>
         </Routes>
         <Routes>
           <Route path='/game' element={<Game/>}/>
