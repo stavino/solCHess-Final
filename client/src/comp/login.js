@@ -1,12 +1,50 @@
 import { Grid, Paper, IconButton, Card, Button, TextField, FormControl, Typography, Link } from "@mui/material";
+import { useState } from "react";
 
-const Login = function(){
+const Login = function(props){
+
+const [formData, setFormData] =useState({
+    username: "",
+    password: "",
+});
+
+
+    const handleFormChange = (e) => {
+        setFormData({
+            ...formData, 
+            [e.target.name]: e.target.value
+        });
+    };
+
+    function handleSubmit(e){
+        e.preventDefault();
+
+        const userCreds = {...formData};
+
+        fetch("/login", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(userCreds),
+          })
+            .then((r) => r.json())
+            .then((user) => {
+              console.log(user);
+              setFormData({
+                username: "",
+                password: "",
+              });
+            });
+    }
+   
     return (
 <div >
             <Grid container >
                 <Grid item xs={2}></Grid>
                 <Grid item xs={8}>
-                    <FormControl fullWidth id="login"> 
+                    <form onSubmit={handleSubmit}>
+                    <FormControl  fullWidth id="login"> 
                         <Paper className="login-form" sx={
                         {borderRadius: "20px",
                          boxShadow: "0 0 20px 8px #d0d0d0;",
@@ -19,17 +57,39 @@ const Login = function(){
                          padding: "5%"
                          }}>
                        
-                            <Typography><h1>Sign In</h1></Typography>
-                                <TextField fullWidth required label="required" placeholder="Username" variant="outlined" type="text" id="username"></TextField>
+                            <Typography><h1>Sign In</h1><br></br></Typography>
+                                <TextField 
+                                    fullWidth 
+                                    required 
+                                    label="required" 
+                                    name="username"
+                                    placeholder="Username"
+                                    variant="outlined"
+                                    type="text"
+                                    id="username"
+                                    value={formData.username}
+                                    onChange={handleFormChange}>
+                                    
+                                    </TextField>
                                 <br></br><br></br>
-                                <TextField fullWidth label="required" placeholder="Password" required variant="outlined" type="text" id="password"></TextField>
+                                <TextField 
+                                    fullWidth
+                                    label="required" 
+                                    placeholder="Password" 
+                                    required variant="outlined" 
+                                    type="password" 
+                                    name="password"
+                                    id="password"
+                                    value={formData.password}
+                                    onChange={handleFormChange}>
+                                </TextField>
                                 <br></br><br></br>
                                 <IconButton><Button variant="contained" type="submit" id='submit-button'>submit</Button></IconButton>
                                 <br></br>
                                 <p>Don't have an account?</p>
-                                <Link >Sign Up</Link>
+                                <Link href="/signup">Sign Up</Link>
                         </Paper>
-                    </FormControl>
+                    </FormControl></form>
                 </Grid>
                 <Grid item xs={2}></Grid>
 
