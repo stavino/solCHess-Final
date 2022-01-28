@@ -9,6 +9,6 @@ class SessionsController < ApplicationController
       end
     
       def logout
-        session.delete :user_id
+        session.delete(:user_id)
       end
 end
