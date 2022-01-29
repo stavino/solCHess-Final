@@ -1,25 +1,19 @@
 import './App.css';
 import '@mui/material'
-import { Grid, Paper, Typography, Card, Box } from '@mui/material';
-import { ThemeProvider, createTheme } from '@mui/material';
-import Game from './comp/game.js'
+import {Paper, ThemeProvider, createTheme } from '@mui/material';
 import { useState, useEffect } from 'react';
-import {Brightness4, Brightness7, PinDropSharp} from '@mui/icons-material'
-import { IconButton } from '@mui/material';
-import {Route, Routes, Navigate} from 'react-router-dom'
 import NavBar from './comp/navbar';
-import Login from './comp/login';
-import Signup from './comp/signup';
 import LoggedIn from './comp/LoggedIn';
 import LoggedOut from './comp/loggedOut';
 
 
 
 function App() {
-  
-  const [darkMode, setDarkMode] = useState(false)
+  const storedDarkMode = localStorage.getItem("DARK_MODE")
+  const [darkMode, setDarkMode] = useState(storedDarkMode)
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
+
 
   useEffect(() => {
     fetch("/me").then((res) => {
@@ -32,32 +26,31 @@ function App() {
     });
   }, []);
 
-  const theme = createTheme({
+  useEffect(() => {localStorage.setItem("DARK_MODE", darkMode)}, [darkMode])
+const theme = createTheme({
     palette: {
     mode: darkMode ? "dark" : 'light'
   },
 })
-if(darkMode === true){
-  document.body.style = "background: black;";
-  
-}
-else document.body.style = `background: ${theme.palette.mode.color};`
+useEffect(() => {darkMode ? document.body.style = "background: black;" : document.body.style = `background: white;`}, [darkMode]);
+
+
 
   
   return (
   
 <ThemeProvider theme={theme} >
-    <div className={"App"} color='inherit'>
-      <NavBar currentUser={currentUser} darkMode={darkMode} setDarkMode={setDarkMode} theme={theme}></NavBar>
+    <Paper className="App" color='inherit' >
+      <NavBar currentUser={currentUser} darkMode={darkMode} setDarkMode={setDarkMode} theme={theme} setCurrentUser={setCurrentUser}></NavBar>
 
-        {currentUser ? <LoggedIn/> : <LoggedOut/>} 
+        {currentUser ? <LoggedIn darkMode={darkMode} currentUser={currentUser} setCurrentUser={setCurrentUser}/> : <LoggedOut darkMode={darkMode} currentUser={currentUser} setCurrentUser={setCurrentUser}/>} 
      
-       
+      
      
      
     
       
-    </div>
+    </Paper>
 </ThemeProvider>
     
    

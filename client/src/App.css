@@ -4,6 +4,14 @@
   align-items: center;
   text-align: center;
 }
+.App-Dark{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: black;
+  }
+
 
 .App-link {
   color: #61dafb;
@@ -21,7 +29,15 @@ body {
   display: table;
 }
 
+#front-page-logo{
+  height: 100px;
+}
 
+.home-page{
+  margin: auto;
+  padding-top: 30%;
+  margin-top: 40%;
+}
 
 .menu-item{
   border-radius: 20px;

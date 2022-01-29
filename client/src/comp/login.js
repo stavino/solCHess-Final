@@ -1,5 +1,6 @@
 import { Grid, Paper, IconButton, Card, Button, TextField, FormControl, Typography, Link } from "@mui/material";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = function(props){
 
@@ -8,6 +9,7 @@ const [formData, setFormData] =useState({
     password: "",
 });
 
+let navigate = useNavigate();
 
     const handleFormChange = (e) => {
         setFormData({
@@ -28,16 +30,19 @@ const [formData, setFormData] =useState({
             },
             body: JSON.stringify(userCreds),
           })
-            .then((r) => r.json())
-            .then((user) => {
-              console.log(user);
-              setFormData({
-                username: "",
-                password: "",
-              });
+            .then((r) => {
+                if(r.ok){
+                    r.json().then((user) => {
+                        props.setCurrentUser(user);
+                        navigate('/');
+                    });
+                } else {
+                    r.json().then((errors) => {
+                    console.error(errors);
+                })
+            }
             });
-    }
-   
+        };
     return (
 <div >
             <Grid container >

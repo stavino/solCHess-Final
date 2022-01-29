@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Navigate, Routes, Route } from "react-router-dom";
+import HomePage from "./HomePage";
 import Login from "./login";
 import Signup from './signup';
 
@@ -12,7 +13,8 @@ const LoggedOut = (props) => {
   return (
     <div>
       <Routes>
-        <Route exact path="/login" element={<Login />} />
+        <Route path='/' element={<HomePage/>}/>
+        <Route exact path="/login" element={<Login currentUser={props.currentUser} setCurrentUser={props.setCurrentUser}/>} />
         <Route exact path="/signup" element={<Signup />} />
       </Routes>
     </div>
