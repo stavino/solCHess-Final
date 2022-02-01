@@ -6,9 +6,17 @@ import { ThemeProvider, createTheme } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import logo from '../image/logo.png'
 import logo2 from '../image/white_logo.jpeg'
+import {
+    WalletModalProvider,
+    WalletDisconnectButton,
+    WalletMultiButton
+  } from '@solana/wallet-adapter-react-ui';
+
 
 
 function NavBar(props){
+
+    const [isConnected, setIsConnected] = useState(false)
 
     let navigate = useNavigate();
     
@@ -39,7 +47,7 @@ function NavBar(props){
         <>
         
         <AppBar  color='default' >
-            <Toolbar sx={{display: "flex"}}>
+            <Toolbar sx={{display: "flex", height: "5%"}}>
                 <Typography >
                     <img src={props.theme.palette.mode === "dark" ? logo2 : logo} alt='solChess' id='logo'/>solCHESS 
                 </Typography>
@@ -59,26 +67,29 @@ function NavBar(props){
                         Quickplay
                 </Button></Typography>
                 <Divider orientation='vertical' variant='middle' flexItem light={true}></Divider>
-                <Button 
-                    color="inherit"
-                    sx={{}} 
-                    size="large"
-                    // href='/login'
-                    onClick={props.currentUser ? logoutFunction : () => {window.location.reload()}}>
-                        
-                    
-                      {props.currentUser ? <Logout/> : <Login />}  
-                </Button>
                 <IconButton 
                     sx={{}} 
                     size="large" 
                     color="inherit"   
                     onClick={() => {props.setDarkMode(!props.darkMode); localStorage.setItem("DARK_MODE", !props.darkMode)}} >
                         {props.theme.palette.mode === 'dark' ? <Brightness7 /> : <Brightness4 />}
-      </IconButton>
-      
+                </IconButton>
+                <Button 
+                    color="inherit"
+                    sx={{}} 
+                    size="large"
+                    // href='/login'
+                    onClick={props.currentUser ? logoutFunction : () => {navigate('./login')}}>
+                        
+                    
+                      {props.currentUser ? <Logout/> : <Login />}  
+                </Button>
                 
-
+                
+                <WalletModalProvider >
+                    <WalletMultiButton/>
+                </WalletModalProvider>
+              
             </Toolbar>
 
 

@@ -5,6 +5,7 @@ import King from '../piecess/king'
 import FallenSoldierBlock from './fallen-soldier-block.js';
 import initialiseChessBoard from '../helper/board-initialiser.js';
 import { Card } from '@mui/material';
+import BoardColor from './BoardColor';
 
 
 
@@ -131,6 +132,7 @@ export default class Game extends React.Component {
     return (
       <Card className='game-card' sx={{borderRadius: "20px", boxShadow: "0 0 20px 8px #d0d0d0;"}}>
         <div className="game">
+          <BoardColor />
           <div className="game-board">
             <Board
               squares={this.state.squares}

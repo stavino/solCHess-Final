@@ -1,10 +1,22 @@
 import './App.css';
 import '@mui/material'
 import {Paper, ThemeProvider, createTheme } from '@mui/material';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import NavBar from './comp/navbar';
 import LoggedIn from './comp/LoggedIn';
 import LoggedOut from './comp/loggedOut';
+import { WalletAdapterNetwork } from '@solana/wallet-adapter-base'
+import {
+  LedgerWalletAdapter,
+  PhantomWalletAdapter,
+  SlopeWalletAdapter,
+  SolflareWalletAdapter,
+  SolletExtensionWalletAdapter,
+  SolletWalletAdapter,
+  TorusWalletAdapter,
+} from '@solana/wallet-adapter-wallets';
+import { clusterApiUrl } from '@solana/web3.js';
+import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
 
 
 
@@ -13,6 +25,9 @@ function App() {
   const [darkMode, setDarkMode] = useState(storedDarkMode)
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
+
+
+require('@solana/wallet-adapter-react-ui/styles.css');
 
 
   useEffect(() => {
@@ -33,27 +48,48 @@ const theme = createTheme({
   },
 })
 useEffect(() => {darkMode ? document.body.style = "background: black;" : document.body.style = `background: white;`}, [darkMode]);
+const network = WalletAdapterNetwork.Devnet;
+const endpoint = useMemo(() => clusterApiUrl(network), [network]);
 
+
+  const wallets = useMemo(
+    () => [
+        new PhantomWalletAdapter(),
+        // new SlopeWalletAdapter(),
+        new SolflareWalletAdapter(),
+        // new TorusWalletAdapter(),
+        // new LedgerWalletAdapter(),
+        // new SolletWalletAdapter({ network }),
+        // new SolletExtensionWalletAdapter({ network }),
+    ],
+    []
+);
 
 
   
-  return (
-  
-<ThemeProvider theme={theme} >
-    <Paper className="App" color='inherit' >
-      <NavBar currentUser={currentUser} darkMode={darkMode} setDarkMode={setDarkMode} theme={theme} setCurrentUser={setCurrentUser}></NavBar>
+  return (<ThemeProvider theme={theme} >
+<ConnectionProvider endpoint={endpoint}>
+  <WalletProvider wallets={wallets} autoConnect >
 
-        {currentUser ? <LoggedIn darkMode={darkMode} currentUser={currentUser} setCurrentUser={setCurrentUser}/> : <LoggedOut darkMode={darkMode} currentUser={currentUser} setCurrentUser={setCurrentUser}/>} 
+                   
+
+    
+      <Paper className="App" color='inherit' >
+        <NavBar currentUser={currentUser} darkMode={darkMode} setDarkMode={setDarkMode} theme={theme} setCurrentUser={setCurrentUser}></NavBar>
+
+          {currentUser ? <LoggedIn darkMode={darkMode} currentUser={currentUser} setCurrentUser={setCurrentUser}/> : <LoggedOut darkMode={darkMode} currentUser={currentUser} setCurrentUser={setCurrentUser}/>} 
      
       
      
      
     
       
-    </Paper>
-</ThemeProvider>
+      </Paper>
     
-   
+
+  </WalletProvider>
+</ConnectionProvider>
+       </ThemeProvider>
   );
 }
 

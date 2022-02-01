@@ -30,15 +30,20 @@ body {
 }
 
 #front-page-logo{
-  height: 100px;
+  height: 50px;
 }
 
 .home-page{
-  margin: auto;
-  padding-top: 30%;
-  margin-top: 40%;
+  margin-top: 20%;
+  display: flex;
+  justify-content: center;
 }
 
+.homepage-card{
+  border-color: black;
+  border-style: solid;
+  border-radius: 20px;
+}
 .menu-item{
   border-radius: 20px;
   
@@ -68,7 +73,7 @@ body {
 }
 .game-card{ 
   border-color: plum;
-  margin-top: 7%;
+  margin-top: 10%;
   border-style: solid;
   padding-top: 3%;
   width: 50%;
