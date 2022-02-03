@@ -67,29 +67,31 @@ const endpoint = useMemo(() => clusterApiUrl(network), [network]);
 
 
   
-  return (<ThemeProvider theme={theme} >
-<ConnectionProvider endpoint={endpoint}>
-  <WalletProvider wallets={wallets} autoConnect >
+  return (
+  
+  <ThemeProvider theme={theme} >
+    <ConnectionProvider endpoint={endpoint}>
+      <WalletProvider wallets={wallets} autoConnect >
 
                    
 
     
-      <Paper className="App" color='inherit' >
-        <NavBar currentUser={currentUser} darkMode={darkMode} setDarkMode={setDarkMode} theme={theme} setCurrentUser={setCurrentUser}></NavBar>
+        <div className="App" color='inherit' >
+          <NavBar currentUser={currentUser} darkMode={darkMode} setDarkMode={setDarkMode} theme={theme} setCurrentUser={setCurrentUser}></NavBar>
 
-          {currentUser ? <LoggedIn darkMode={darkMode} currentUser={currentUser} setCurrentUser={setCurrentUser}/> : <LoggedOut darkMode={darkMode} currentUser={currentUser} setCurrentUser={setCurrentUser}/>} 
+            {currentUser ? <LoggedIn theme={theme} darkMode={darkMode} currentUser={currentUser} setCurrentUser={setCurrentUser}/> : <LoggedOut theme={theme} darkMode={darkMode} currentUser={currentUser} setCurrentUser={setCurrentUser}/>} 
      
       
      
      
     
       
-      </Paper>
+        </div>
     
 
-  </WalletProvider>
-</ConnectionProvider>
-       </ThemeProvider>
+      </WalletProvider>
+    </ConnectionProvider>
+  </ThemeProvider>
   );
 }
 

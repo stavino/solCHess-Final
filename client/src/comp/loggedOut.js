@@ -11,13 +11,13 @@ const LoggedOut = (props) => {
 
   }, [])
   return (
-    <div>
+    
       <Routes>
-        <Route path='/' element={<HomePage currentUser={props.currentUser}/>}/>
+        <Route path='/' element={<HomePage theme={props.theme} currentUser={props.currentUser} darkMode={props.darkMode}/>}/>
         <Route exact path="/login" element={<Login currentUser={props.currentUser} setCurrentUser={props.setCurrentUser}/>} />
         <Route exact path="/signup" element={<Signup />} />
       </Routes>
-    </div>
+    
   );
 };
 

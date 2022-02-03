@@ -4,12 +4,12 @@ import HomePage from "./HomePage";
 
 const LoggedIn = (props) => {
   return (
-    <>
+    
       <Routes>
-        <Route path='/' element={<HomePage currentUser={props.currentUser}/>}/>
+        <Route path='/' element={<HomePage theme={props.theme} currentUser={props.currentUser} darkMode={props.darkMode}/>}/>
         <Route path='/game' element={<Game/>}/>
       </Routes>
-    </>
+    
   );
 };
 

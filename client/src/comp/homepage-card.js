@@ -8,11 +8,10 @@ const HomepageCard = (props) => {
 
     return (
 
-    <Card className="homepage-card" sx={{ maxWidth: 345 }}>
-      <CardActionArea>
+    <Card className="homepage-card" sx={{ maxWidth: '250px', borderColor: props.theme.palette.color }}>
+      <CardActionArea onClick={() => {props.currentUser ? navigate(`/${props.name}`) : navigate('/login')}}>
         <CardMedia
           component="img"
-          onClick={() => {props.currentUser ? navigate(`/${props.name}`) : navigate('/login')}}
           height="140"
           image={chessImage}
           alt="play"
