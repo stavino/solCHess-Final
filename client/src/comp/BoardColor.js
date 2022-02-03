@@ -19,7 +19,6 @@ const BoardColor = () => {
     };
 
 
-
     return (
       <div>
         <Button
@@ -41,7 +40,7 @@ const BoardColor = () => {
           }}
         >
           <MenuItem onClick={handleClose}>Solana</MenuItem>
-          <MenuItem onClick={handleClose}>Classic</MenuItem>
+          <MenuItem onClick={() => {handleClose()}}>Classic</MenuItem>
           <MenuItem onClick={handleClose}>Gecko</MenuItem>
           <MenuItem onClick={handleClose}>Cats</MenuItem>
         </Menu>

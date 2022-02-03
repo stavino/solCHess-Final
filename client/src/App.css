@@ -37,6 +37,7 @@ body {
   margin-top: 20%;
   display: flex;
   justify-content: center;
+
 }
 
 .homepage-card{
@@ -76,8 +77,10 @@ body {
   margin-top: 10%;
   border-style: solid;
   padding-top: 3%;
-  width: 50%;
-  height: 50%;
+  padding-left: 3%;
+  padding-right: 3%;
+  width: fit-content;
+  height: fit-content;
   overflow: hidden;
 }
 
@@ -104,7 +107,10 @@ body {
 
 
 #login{
-  padding-top: 25%;
+  position: absolute;
+  display: flex;
+  height: fit-content;
+  margin: auto;
 }
 
 .dark-square{
