@@ -45,7 +45,7 @@ let navigate = useNavigate();
         };
     return (
 <div >
-            <Grid container >
+            <Grid container className="login">
                 <Grid item xs={2}></Grid>
                 <Grid item xs={8}>
                     <form onSubmit={handleSubmit}>

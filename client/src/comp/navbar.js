@@ -47,7 +47,7 @@ function NavBar(props){
         <>
         
         <AppBar sx={{display: "flex", height: 'fit-content'}} color='default' >
-            <Toolbar >
+            <Toolbar sx={{justifyContent: "center"}}>
                 <Typography >
                     <img src={props.theme.palette.mode === "dark" ? logo2 : logo} alt='solChess' id='logo'/>solCHESS 
                 </Typography>

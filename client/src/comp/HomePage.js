@@ -8,6 +8,7 @@ import HomepageCard from "./homepage-card"
 const HomePage = (props) => {
 
 
+
     return (
         <div className="home-page">
         <Grid container>
@@ -17,7 +18,7 @@ const HomePage = (props) => {
                 <img src={logo2} alt="logo" id="front-page-logo"/>}</h1>
             </Grid>
             <Grid item xs={6}>
-                <HomepageCard name='Quickplay'></HomepageCard>
+                <HomepageCard name='game' currentUser={props.currentUser}></HomepageCard>
             </Grid>
         
         

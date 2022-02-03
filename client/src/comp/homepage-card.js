@@ -1,15 +1,18 @@
 import { Card, CardContent, CardMedia, Typography, CardActionArea } from "@mui/material"
 import chessImage from '../image/chess.jpeg'
+import { useNavigate } from "react-router-dom";
 
 const HomepageCard = (props) => {
     
-    
+    const navigate = useNavigate();
+
     return (
 
     <Card className="homepage-card" sx={{ maxWidth: 345 }}>
       <CardActionArea>
         <CardMedia
           component="img"
+          onClick={() => {props.currentUser ? navigate(`/${props.name}`) : navigate('/login')}}
           height="140"
           image={chessImage}
           alt="play"

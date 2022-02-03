@@ -2,11 +2,11 @@ import Game from "./game";
 import { Route, Routes } from "react-router-dom";
 import HomePage from "./HomePage";
 
-const LoggedIn = () => {
+const LoggedIn = (props) => {
   return (
     <>
       <Routes>
-        <Route path='/' element={<HomePage />}/>
+        <Route path='/' element={<HomePage currentUser={props.currentUser}/>}/>
         <Route path='/game' element={<Game/>}/>
       </Routes>
     </>

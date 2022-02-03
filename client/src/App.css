@@ -37,6 +37,7 @@ body {
   margin-top: 20%;
   display: flex;
   justify-content: center;
+  max-width: 500px;
 }
 
 .homepage-card{
@@ -114,7 +115,9 @@ body {
 
 
 #login{
-  padding-top: 25%;
+  max-width: 500px;
+  height: auto;
+  width: 100%;
 }
 
 .dark-square{
@@ -134,4 +137,8 @@ background-color: plum;
 }
 
 
-
+.signup{
+  max-width: 500px;
+  height: auto;
+  width: 100%;
+}

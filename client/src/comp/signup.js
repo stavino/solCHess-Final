@@ -40,7 +40,7 @@ const Signup = () => {
 
     return (
         <div>
-            <Grid container >
+            <Grid container className="signup">
                 <Grid item xs={2}></Grid>
                 <Grid item xs={8}>
                     <form onSubmit={handleSubmit}>
