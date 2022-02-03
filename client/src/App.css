@@ -37,7 +37,6 @@ body {
   margin-top: 20%;
   display: flex;
   justify-content: center;
-
 }
 
 .homepage-card{
@@ -76,16 +75,24 @@ body {
   border-color: plum;
   margin-top: 10%;
   border-style: solid;
+  position: relative;
   padding-top: 3%;
-  padding-left: 3%;
-  padding-right: 3%;
-  width: fit-content;
-  height: fit-content;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
+  max-width: 500px;
 }
 
+/* #game {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  height: 100%;
+  position: relative;
+} */
+
 #logo{
-  height: 40px;
+  height: 50px;
   width: auto;
 }
 
@@ -107,10 +114,7 @@ body {
 
 
 #login{
-  position: absolute;
-  display: flex;
-  height: fit-content;
-  margin: auto;
+  padding-top: 25%;
 }
 
 .dark-square{
