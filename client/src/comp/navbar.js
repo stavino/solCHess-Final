@@ -47,49 +47,60 @@ function NavBar(props){
         <>
         
         <AppBar  color='default' >
-            <Toolbar sx={{display: "flex", height: "fit-content", width: "fit-content"}}>
-                <Typography >
-                    <img src={props.theme.palette.mode === "dark" ? logo2 : logo} alt='solChess' id='logo'/>solCHESS 
-                </Typography>
-                <Typography variant="h6" component="div" >
-                <Button 
-                    sx={{}}  
-                    size="large" 
-                    color='inherit' 
-                    href='/'>
-                        Home
-                </Button>
-                <Button  
-                    sx={{}} 
-                    size="large" 
-                    color='inherit' 
-                    href={props.currentUser ? '/game' : '/login'}>
-                        Quickplay
-                </Button></Typography>
-                <Divider orientation='vertical' variant='middle' flexItem light={true}></Divider>
-                <IconButton 
-                    sx={{}} 
-                    size="large" 
-                    color="inherit"   
-                    onClick={() => {props.setDarkMode(!props.darkMode); localStorage.setItem("DARK_MODE", !props.darkMode)}} >
-                        {props.theme.palette.mode === 'dark' ? <Brightness7 /> : <Brightness4 />}
-                </IconButton>
-                <Button 
-                    color="inherit"
-                    sx={{}} 
-                    size="large"
-                    // href='/login'
-                    onClick={props.currentUser ? logoutFunction : () => {navigate('./login')}}>
+            <Toolbar sx={{display: "flex", height: "fit-content"}}>
+                <Grid container>
+                    <Grid item xs={2}>
+                        <Typography >
+                            <img src={props.theme.palette.mode === "dark" ? logo2 : logo} alt='solChess' id='logo'/>solCHESS 
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={2}>
+                        <Typography variant="h6" component="div" >
+                            <Button 
+                                sx={{}}  
+                                size="large" 
+                                color='inherit' 
+                                href='/'>
+                                            Home
+                             </Button>
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={2}> 
+                        <Button  
+                            sx={{}} 
+                            size="large" 
+                            color='inherit' 
+                            href={props.currentUser ? '/game' : '/login'}>
+                                        Quickplay
+                        </Button>
+                    </Grid>
+                    <Divider orientation='vertical' variant='middle' flexItem light={true}></Divider>
+                    <Grid item xs={2}><IconButton 
+                        sx={{}} 
+                        size="large" 
+                        color="inherit"   
+                        onClick={() => {props.setDarkMode(!props.darkMode); localStorage.setItem("DARK_MODE", !props.darkMode)}} >
+                            {props.theme.palette.mode === 'dark' ? <Brightness7 /> : <Brightness4 />}
+                    </IconButton>
+                    </Grid>
+                    <Grid item xs={2}>
+                        <Button 
+                        color="inherit"
+                        sx={{}} 
+                        size="large"
+                        // href='/login'
+                        onClick={props.currentUser ? logoutFunction : () => {navigate('./login')}}>
                         
                     
-                      {props.currentUser ? <Logout/> : <Login />}  
-                </Button>
+                            {props.currentUser ? <Logout/> : <Login />}  
+                        </Button>
+                    </Grid>
                 
                 
                 <WalletModalProvider >
                     <WalletMultiButton/>
                 </WalletModalProvider>
-              
+              </Grid>
             </Toolbar>
 
 
