@@ -73,15 +73,12 @@ body {
   text-align: center;
   width: 48px;
 }
-.game-card{ 
-  border-color: plum;
-
-  border-style: solid;
-  position: relative;
-  padding-right: 2%;
-  padding-left: 2%;
-  width: auto;
-  height: fit-content;
+.game{ 
+ 
+  margin-top: 5%;
+  position: absolute;
+  width: 100%;
+  height: auto;
   max-width: 500px;
 }
 

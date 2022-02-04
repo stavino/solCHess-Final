@@ -130,11 +130,13 @@ export default class Game extends React.Component {
   render() {
 
     return (
-      <Card className='game-card' sx={{borderRadius: "20px", boxShadow: "0 0 20px 8px #d0d0d0;"}}>
+    
+    // <Card className='game-card' sx={{borderRadius: "20px", boxShadow: "0 0 20px 8px #d0d0d0;"}}>
+      
         <div className="game">
           <BoardColor />
           <div className="game-board">
-            <Board
+            <Board sx={{borderRadius: "20px", boxShadow: "0 0 20px 8px #d0d0d0;"}}
               squares={this.state.squares}
               onClick={(i) => this.handleClick(i)}
             />
@@ -160,7 +162,7 @@ export default class Game extends React.Component {
 
               
         
-      </Card>
+      // </Card>
 
 
     );

@@ -47,25 +47,25 @@ function NavBar(props){
         <>
         
         <AppBar sx={{display: "flex", height: 'fit-content'}} color='default' >
-            <Toolbar sx={{justifyContent: "center"}}>
+            <Toolbar sx={{justifyContent: "space-between"}}>
                 <Typography >
                     <img src={props.theme.palette.mode === "dark" ? logo2 : logo} alt='solChess' id='logo'/>solCHESS 
                 </Typography>
-                <Typography variant="h6" component="div" >
+                <Typography variant="h6" >
                 <Button 
                     sx={{}}  
                     size="large" 
                     color='inherit' 
                     href='/'>
                         Home
-                </Button>
+                </Button></Typography>
                 <Button  
                     sx={{}} 
                     size="large" 
                     color='inherit' 
                     href={props.currentUser ? '/game' : '/login'}>
                         Quickplay
-                </Button></Typography>
+                </Button>
                 <Divider orientation='vertical' variant='middle' flexItem light={true}></Divider>
                 <IconButton 
                     sx={{}} 
