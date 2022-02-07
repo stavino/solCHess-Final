@@ -7,8 +7,9 @@ import Menu from '@mui/material/Menu';
 import { Button } from '@mui/material';
 import { useState } from 'react';
 
-const BoardColor = () => {
+const BoardColor = (props) => {
 
+ 
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -40,7 +41,7 @@ const BoardColor = () => {
           }}
         >
           <MenuItem onClick={handleClose}>Solana</MenuItem>
-          <MenuItem onClick={() => {handleClose()}}>Classic</MenuItem>
+          <MenuItem onClick={() => {handleClose(); }}>Classic</MenuItem>
           <MenuItem onClick={handleClose}>Gecko</MenuItem>
           <MenuItem onClick={handleClose}>Cats</MenuItem>
         </Menu>

@@ -5,10 +5,13 @@ import { useNavigate } from "react-router-dom";
 const HomepageCard = (props) => {
     
     const navigate = useNavigate();
-
+    const capitalize = (s) => {
+      if (typeof s !== 'string') return ''
+      return s.charAt(0).toUpperCase() + s.slice(1)
+    }
     return (
 
-    <Card className="homepage-card" sx={{ maxWidth: '250px', borderColor: props.theme.palette.color }}>
+    <Card className="homepage-card" sx={{ ml: "10px", mr: "10px", maxWidth: '250px', borderColor: props.theme.palette.color, borderRadius: "20px", boxShadow: "0 0 20px 4px #b1b1b1;"}}>
       <CardActionArea onClick={() => {props.currentUser ? navigate(`/${props.name}`) : navigate('/login')}}>
         <CardMedia
           component="img"
@@ -18,7 +21,7 @@ const HomepageCard = (props) => {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Play
+            {capitalize(props.name)}
           </Typography>
           <Typography variant="body2" color="text.secondary">
             Lizards are a widespread group of squamate reptiles, with over 6,000

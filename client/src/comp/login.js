@@ -34,7 +34,7 @@ let navigate = useNavigate();
                 if(r.ok){
                     r.json().then((user) => {
                         props.setCurrentUser(user);
-                        navigate('/');
+                        navigate('/dashboard');
                     });
                 } else {
                     r.json().then((errors) => {

@@ -2,7 +2,6 @@
   display: flex;
   height: auto;
   margin: auto;
-  align-items: flex-start;
   justify-content: center;
   text-align: center;
 }
@@ -33,11 +32,9 @@ body {
 
 .home-page{
   margin: auto;
-  margin-top: 30%;
   padding-top: 10%;
   width: fit-content;
   justify-content: center;
-  align-items: center;
   max-width: 500px;
   position: absolute;
 }
@@ -45,6 +42,10 @@ body {
 .homepage-card{
   border-style: solid;
   border-radius: 20px;
+
+}
+.homepage-card:hover{
+  box-shadow: 0 0 20px 8px #d0d0d0;
 }
 .menu-item{
   border-radius: 20px;
@@ -120,6 +121,9 @@ body {
 
 .dark-square{
 background-color: plum;
+}
+.dark-square-classic{
+  background-color: orange;
 }
 
 .light-square{

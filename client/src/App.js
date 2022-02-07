@@ -25,9 +25,12 @@ function App() {
   const [darkMode, setDarkMode] = useState(storedDarkMode)
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
+ 
 
 
 require('@solana/wallet-adapter-react-ui/styles.css');
+
+
 
 
   useEffect(() => {

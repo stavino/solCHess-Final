@@ -59,13 +59,7 @@ function NavBar(props){
                     href='/'>
                         Home
                 </Button></Typography>
-                <Button  
-                    sx={{}} 
-                    size="large" 
-                    color='inherit' 
-                    href={props.currentUser ? '/game' : '/login'}>
-                        Quickplay
-                </Button>
+                
                 <Divider orientation='vertical' variant='middle' flexItem light={true}></Divider>
                 <IconButton 
                     sx={{}} 
@@ -86,9 +80,7 @@ function NavBar(props){
                 </Button>
                 
                 
-                <WalletModalProvider >
-                    <WalletMultiButton/>
-                </WalletModalProvider>
+                
               
             </Toolbar>
 

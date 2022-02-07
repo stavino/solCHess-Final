@@ -9,6 +9,7 @@ import { Typography } from "@mui/material"
 const HomePage = (props) => {
 
 
+ 
 
     return (
         
@@ -16,15 +17,21 @@ const HomePage = (props) => {
             
             <Grid item xs={12}>
                 <Typography>
-                    {props.darkMode ? <div className="dark-welcome"><h1>Welcome to solCHESS</h1><img src={logo2} alt="logo" id="front-page-logo"/> </div> :
-                    <div className="light-welcome"><h1>Welcome to solCHESS</h1><img src={logo} alt="logo" id="front-page-logo"/></div>}
+                    {props.darkMode ? <div className="dark-welcome"><h1><img src={logo2} alt="logo" id="front-page-logo"/>Welcome to solCHESS<img src={logo2} alt="logo" id="front-page-logo"/></h1><h2>Solana's Premier Chess Community</h2> </div> :
+                    <div className="light-welcome"><h1><img src={logo} alt="logo" id="front-page-logo"/>Welcome to solCHESS<img src={logo} alt="logo" id="front-page-logo"/></h1><h2>Solana's Premier Chess Community</h2></div>}
                 </Typography>
             </Grid>
             <Grid item xs={6}>
-                <HomepageCard theme={props.theme} name='game' currentUser={props.currentUser}></HomepageCard>
+                <HomepageCard theme={props.theme} name='matchmaking' currentUser={props.currentUser}></HomepageCard>
             </Grid>
-        
-        
+            <Grid item xs={6}>
+                <HomepageCard theme={props.theme} name='dashboard' currentUser={props.currentUser}></HomepageCard>
+            </Grid>
+        <Grid item xs={12} >
+            <form>
+                
+            </form>
+        </Grid>
         
         
         

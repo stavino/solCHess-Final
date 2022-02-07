@@ -128,7 +128,6 @@ export default class Game extends React.Component {
   }
 
   render() {
-
     return (
     
     // <Card className='game-card' sx={{borderRadius: "20px", boxShadow: "0 0 20px 8px #d0d0d0;"}}>
