@@ -8,7 +8,7 @@ const Matchmaking = function (){
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify('fdgdfgdgdfg')
+            body: JSON.stringify('fdgghfftydydfgdgdfg')
         })
     }
 
