@@ -27,6 +27,9 @@ const HomePage = (props) => {
             <Grid item xs={6}>
                 <HomepageCard theme={props.theme} name='dashboard' currentUser={props.currentUser}></HomepageCard>
             </Grid>
+            <Grid item xs={6}>
+                <HomepageCard theme={props.theme} name='game' currentUser={props.currentUser}></HomepageCard>
+            </Grid>
         <Grid item xs={12} >
             <form>
                 

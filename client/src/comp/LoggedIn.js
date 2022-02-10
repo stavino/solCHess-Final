@@ -16,7 +16,7 @@ const LoggedIn = (props) => {
         <Route path='/' element={<HomePage theme={props.theme} currentUser={props.currentUser} darkMode={props.darkMode}/>}/>
         <Route path='/game' element={<Game/>}/>
         <Route path='/dashboard' element={<Dashboard/>}/>
-        <Route path='/matchmaking' element={<Matchmaking />}/>
+        <Route path='/matchmaking' element={<Matchmaking currentUser={props.currentUser} />}/>
       </Routes>
     
   );

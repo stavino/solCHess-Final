@@ -1,7 +1,11 @@
+import { PinDropSharp } from "@mui/icons-material";
 import { Grid, Paper, IconButton, Card, Button, TextField, FormControl, Typography, Link } from "@mui/material";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const Signup = () => {
+const Signup = (props) => {
+    let delayInMilliseconds = 1000;
+    let navigate = useNavigate();
     const [formData, setFormData] = useState(
         {
             username:"",
@@ -31,11 +35,9 @@ const Signup = () => {
             .then(response => response.json())
             .then((user) => {
                 console.log(user);
-                setFormData({
-                    username: "",
-                    password: ""
-                });
-            });
+                props.setCurrentUser(user);
+            })
+            .then(navigate('/dashboard'))
     }
 
     return (

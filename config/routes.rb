@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :rankings
   get 'sessions/login'
   get 'sessions/logout'
   resources :matches
