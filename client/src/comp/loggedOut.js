@@ -14,8 +14,8 @@ const LoggedOut = (props) => {
     
       <Routes>
         <Route path='/' element={<HomePage theme={props.theme} currentUser={props.currentUser} darkMode={props.darkMode}/>}/>
-        <Route exact path="/login" element={<Login currentUser={props.currentUser} setCurrentUser={props.setCurrentUser}/>} />
-        <Route exact path="/signup" element={<Signup currentUser={props.currentUser} setCurrentUser={props.setCurrentUser} />} />
+        <Route exact path="/login" element={<Login currentUser={props.currentUser} setCurrentUser={props.setCurrentUser} darkMode={props.darkMode}/>} />
+        <Route exact path="/signup" element={<Signup currentUser={props.currentUser} setCurrentUser={props.setCurrentUser} darkMode={props.darkMode} />} />
       </Routes>
     
   );

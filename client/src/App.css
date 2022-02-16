@@ -30,9 +30,36 @@ body {
   height: 50px;
 }
 
+#form
+{
+  background-color: rgba(0, 0, 0, .15);
+  padding: .25rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  height: 3rem;
+  box-sizing: border-box;
+  backdrop-filter: blur(10px);
+}
+#form > button { 
+  background: #333; border: none; 
+  padding: 0 1rem; margin: 0.25rem;
+  border-radius: 3px; 
+  outline: none; 
+  color: #fff; }
+
+  .general-chat{
+    margin: auto;
+    margin-top: 3%;
+    height: 650px;
+
+  }
+
 .home-page{
   margin: auto;
-  padding-top: 10%;
+  padding-top: 5%;
   width: fit-content;
   justify-content: center;
   max-width: 500px;
@@ -42,11 +69,24 @@ body {
 .homepage-card{
   border-style: solid;
   border-radius: 20px;
+  margin-top: 3%;
 
 }
 .homepage-card:hover{
   box-shadow: 0 0 20px 8px #d0d0d0;
 }
+#input
+{ 
+  border: none;
+  padding: 0 1rem;
+  flex-grow: 1;
+  border-radius: 2rem;
+  margin: 0.25rem; }
+  
+#input:focus {
+  outline: none;
+}
+
 .match-listing{
  margin: auto;
   margin-bottom: 5%;
@@ -61,6 +101,8 @@ body {
   border-radius: 20px;
   box-shadow: 0 0 20px 8px #d0d0d0;
 }
+
+
 .status {
   margin-bottom: 10px;
 }

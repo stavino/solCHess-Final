@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :messages
+  resources :rooms
   resources :rankings
   get 'sessions/login'
   get 'sessions/logout'

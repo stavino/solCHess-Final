@@ -16,3 +16,8 @@ puts "Seeding Matches"
 match = Match.create(player1_id: player.id, player2_id: player2.id)
 match2 = Match.create(player1_id: player2.id, player2_id: player3.id)
 match3 = Match.create(player1_id: player3.id, player2_id: player.id)
+
+puts "seeding chat"
+general = Room.create(name: "General")
+
+test1 = Message.create(content: "yoooooo", user_id: player.id, room_id: general.id)

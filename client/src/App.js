@@ -1,6 +1,6 @@
 import './App.css';
 import '@mui/material'
-import {Paper, ThemeProvider, createTheme } from '@mui/material';
+import {Paper, ThemeProvider, createTheme} from '@mui/material';
 import { useState, useEffect, useMemo } from 'react';
 import NavBar from './comp/navbar';
 import LoggedIn from './comp/LoggedIn';
@@ -26,7 +26,6 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
  
-
 
 require('@solana/wallet-adapter-react-ui/styles.css');
 

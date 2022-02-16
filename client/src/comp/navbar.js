@@ -37,8 +37,6 @@ function NavBar(props){
                     };
                 });
 
-        // }
-        // else {console.log('already logged out')}
     }
 
 
@@ -47,27 +45,21 @@ function NavBar(props){
         <>
         
         <AppBar sx={{display: "flex", height: 'fit-content'}} color='default' >
-            <Toolbar sx={{justifyContent: "space-between"}}>
-                <Typography >
+            <Toolbar sx={{justifyContent: "flex-start"}}>
+                <IconButton href='/'>
                     <img src={props.theme.palette.mode === "dark" ? logo2 : logo} alt='solChess' id='logo'/>solCHESS 
-                </Typography>
-                <Typography variant="h6" >
-                <Button 
-                    sx={{}}  
-                    size="large" 
-                    color='inherit' 
-                    href='/'>
-                        Home
-                </Button></Typography>
+                </IconButton>
+            
+                
                 
                 <Divider orientation='vertical' variant='middle' flexItem light={true}></Divider>
-                <IconButton 
+                <Button 
                     sx={{}} 
                     size="large" 
                     color="inherit"   
                     onClick={() => {props.setDarkMode(!props.darkMode); localStorage.setItem("DARK_MODE", !props.darkMode)}} >
                         {props.theme.palette.mode === 'dark' ? <Brightness7 /> : <Brightness4 />}
-                </IconButton>
+                </Button>
                 <Button 
                     color="inherit"
                     sx={{}} 

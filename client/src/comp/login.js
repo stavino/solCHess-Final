@@ -56,9 +56,9 @@ let navigate = useNavigate();
                          margin: "40%",
                          ml: "-22.5%",
                          height: "400px",
-                         width: "500px",
+                         width: "400px",
                          borderStyle: "solid",
-                         borderColor: "plum",
+                         borderColor: props.darkMode ? "black" : "white",
                          padding: "5%"
                          }}>
                        
